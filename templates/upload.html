@@ -1,0 +1,48 @@
+<html>
+   <body>
+
+      <form action = "http://localhost:2222/uploader" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+
+   {% if dup_code %}
+    <h1>Mã môn bị trùng</h1>
+        <ul>
+
+        {% for dup in dup_code  %}
+            <li><a> {{ dup | safe }} </a></li>
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+
+      {% if dup_qes %}
+    <h1>Câu hỏi bị trùng</h1>
+        <ul>
+
+        {% for dup in dup_qes  %}
+            <li>
+                <a> {{ dup | safe }} </a>
+            </li>
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+
+    {% if dup_ans %}
+    <h1>Đáp án bị trùng</h1>
+        <ul>
+
+        {% for dup in dup_ans  %}
+            <li>
+                <a> {{ dup | safe }} </a>
+            </li>
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+
+   </body>
+</html>
