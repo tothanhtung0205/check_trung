@@ -42,6 +42,7 @@ def check_dup_code(data):
     for dup in sorted(list_duplicates(ma_mon)):
         indexs = dup[1]
         dup_code.append(data[indexs[0]][0])
+        dup_code.append(data[indexs[0]][0])
 
     print(dup_code)
 
